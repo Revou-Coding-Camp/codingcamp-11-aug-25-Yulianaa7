@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <!-- Link Tailwind CSS from CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Modal for Name Input -->
+  <div id="nameModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-[100] flex items-center justify-center transition-opacity duration-300 opacity-0 hidden">
+    <div class="bg-white rounded-xl shadow-2xl p-8 max-w-sm w-full mx-4 transform transition-transform duration-300 scale-95">
+      <h2 class="text-2xl font-bold mb-4 text-center">Selamat Datang!</h2>
+      <p class="text-center text-gray-600 mb-6">Silakan masukkan nama Anda untuk memulai.</p>
+      <form id="nameForm" class="space-y-4">
+        <input type="text" id="nameInput" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Nama Anda" required>
+        <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition">Masuk</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="fixed w-full top-0 z-50 bg-white/50 backdrop-blur-md shadow-md">
+    <div class="container mx-auto flex items-center justify-between px-6 py-3">
+      <!-- Logo -->
+      <a href="#" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition">MyPortfolio</a>
+
+      <!-- Menu Desktop -->
+      <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Hamburger Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button id="menu-btn" class="focus:outline-none">
+          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <ul class="flex flex-col space-y-2 px-6 py-4 text-gray-700 font-medium">
+        <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-600">About</a></li>
+        <li><a href="#portfolio" class="hover:text-blue-600">Portfolio</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-blue-100 to-blue-300 text-center">
+    <!-- Updated H1 tag with an ID to target it with JS -->
+    <h1 id="greetingText" class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-blue-600">Your Name</span></h1>
+    <p class="text-lg md:text-xl max-w-xl">A passionate UI/UX Designer & Backend Developer crafting beautiful and functional digital experiences.</p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
+    <p class="max-w-3xl mx-auto text-center text-gray-600">
+      I am a technology enthusiast with a strong interest in design and backend development. I love creating visually appealing and user-friendly websites, as well as building robust backend systems.
+    </p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-10 text-center">Portfolio</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+          <img src="images/Porto1.png" alt="A developer's desk with a laptop" class="w-full">
+          <div class="p-4">
+            <h3 class="text-xl font-bold">ReadEase</h3>
+            <p class="text-gray-600">ReadEase adalah aplikasi yang menyediakan koleksi buku digital dari berbagai genre yang dapat dibaca kapan saja dan di mana saja. Dilengkapi fitur bookmark, mode malam, penyesuaian ukuran huruf, dan pencarian cepat, aplikasi ini dirancang untuk memberikan pengalaman membaca yang nyaman dan praktis.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+          <img src="images/Porto2.png" alt="Computer screen displaying code" class="w-full">
+          <div class="p-4">
+            <h3 class="text-xl font-bold">CareLans</h3>
+            <p class="text-gray-600">CareLans adalah aplikasi yang memudahkan keluarga memesan caregiver profesional untuk lansia. Fitur utamanya meliputi pencarian caregiver sesuai lokasi & keahlian, profil detail, sistem pemesanan dan pembayaran online, serta notifikasi pengingat. Dirancang untuk aman, praktis, dan terpercaya.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+          <img src="images/Porto3.png" alt="A design prototype on a tablet" class="w-full">
+          <div class="p-4">
+            <h3 class="text-xl font-bold">StagePass</h3>
+            <p class="text-gray-600">StagePass adalah aplikasi untuk memesan tiket konser secara mudah dan cepat. Pengguna dapat mencari konser berdasarkan artis, lokasi, atau tanggal, melihat detail acara, memilih tempat duduk, dan melakukan pembayaran online. Dilengkapi e-ticket dan notifikasi pengingat acara.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-10 text-center">Message Us</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      
+      <!-- Form -->
+      <form id="messageForm" class="bg-white p-6 rounded-lg shadow-lg">
+        <label class="block mb-4">
+          <span class="text-gray-700">Your Name</span>
+          <input type="text" id="name" class="mt-1 block w-full p-2 border rounded-md" required>
+        </label>
+        <label class="block mb-4">
+          <span class="text-gray-700">Tanggal Lahir</span>
+          <input type="date" id="dob" class="mt-1 block w-full p-2 border rounded-md" required>
+        </label>
+        <label class="block mb-4">
+          <span class="text-gray-700">Jenis Kelamin</span>
+          <select id="gender" class="mt-1 block w-full p-2 border rounded-md" required>
+            <option value="">Pilih</option>
+            <option value="laki-laki">Laki-laki</option>
+            <option value="perempuan">Perempuan</option>
+            <option value="lainnya">Lainnya</option>
+          </select>
+        </label>
+        <label class="block mb-4">
+          <span class="text-gray-700">Your Message</span>
+          <textarea id="message" rows="4" class="mt-1 block w-full p-2 border rounded-md" required></textarea>
+        </label>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">Send</button>
+      </form>
+
+      <!-- Messages Display -->
+      <div id="messageDisplay" class="bg-gray-100 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-bold mb-4">Messages</h3>
+        <ul id="messagesList" class="space-y-4 text-gray-700"></ul>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Link to the external JavaScript file -->
+  <script src="js/script.js"></script>
+</body>
+</html>
